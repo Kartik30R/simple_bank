@@ -14,7 +14,7 @@ import (
 
 
 type createAccountRequest struct{
- Currency string `json:"currency" binding:"required, oneof=USD EUR"`
+ Currency string `json:"currency" binding:"required,oneof=USD EUR"`
 }
 
 
@@ -71,6 +71,7 @@ if err!=nil{
 		ctx.JSON(http.StatusNotFound,errorResponse(err))
 	}
 	ctx.JSON(http.StatusInternalServerError, errorResponse(err))
+	return
 }
 
 	authPayload := ctx.MustGet(authorizationPayloadKey).(*token.Payload)
@@ -87,8 +88,8 @@ ctx.JSON(http.StatusOK,acc)
 
 
 type listAccountsRequest struct{
-	pageID int32 `form:"page_id" binding:"required, min=1"`
-	pageSize int32 `form:"page_size" binding:"required, min=5 , max=10"`
+	PageID int32 `form:"page_id" binding:"required,min=1"`
+	PageSize int32 `form:"page_size" binding:"required,min=5 , max=10"`
 }
 
 
@@ -104,8 +105,8 @@ authorizedOwner := ctx.MustGet(authorizationPayloadKey).(*token.Payload)
 
  params:= db.ListAccountsParams{
 	Owner: authorizedOwner.Username,
-	Limit: req.pageSize,
-	Offset: (req.pageID-1)*req.pageSize,
+	Limit: req.PageSize,
+	Offset: (req.PageID-1)*req.PageSize,
  }
  account , err:= server.store.ListAccounts(ctx,params)
  if err!=nil{
