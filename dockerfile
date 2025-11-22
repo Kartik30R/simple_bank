@@ -1,5 +1,5 @@
 # Build stage
-FROM golang:1.23-alpine AS builder
+FROM golang:1.24-alpine AS builder
 
 WORKDIR /app
 COPY . .
@@ -18,7 +18,7 @@ FROM alpine:3.18
 WORKDIR /app
 
 COPY --from=builder /app/main .
-COPY --from=builder /app/migrate.linux-amd64 ./migrate
+COPY --from=builder /app/migrate ./migrate
 
 COPY app.env .
 COPY start.sh .
