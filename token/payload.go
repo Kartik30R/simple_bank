@@ -1,4 +1,4 @@
-package token
+﻿package token
 
 import (
  	"time"
@@ -68,3 +68,4 @@ func (payload *Payload) Valid() error {
 func (payload *Payload) GetAudience() (jwt.ClaimStrings, error) {
 	panic("unimplemented")
 }
+

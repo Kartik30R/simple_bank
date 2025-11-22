@@ -1,4 +1,4 @@
-package token
+﻿package token
 
 import (
 	"errors"
@@ -64,3 +64,4 @@ func (maker JWTMaker) VerifyToken(token string) (*Payload, error) {
 
 	return payload, nil
 }
+

@@ -1,4 +1,4 @@
-package api
+﻿package api
 
 import (
 	"fmt"
@@ -63,3 +63,4 @@ return server.router.Run(address);
 func errorResponse(err error) gin.H {
     return gin.H{"error": err.Error()}
 }
+

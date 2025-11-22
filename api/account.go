@@ -1,4 +1,4 @@
-package api
+﻿package api
 
 import (
 	"database/sql"
@@ -116,4 +116,5 @@ authorizedOwner := ctx.MustGet(authorizationPayloadKey).(*token.Payload)
 
  ctx.JSON(http.StatusOK,account)
 }
+
 
