@@ -14,7 +14,7 @@ COPY --from=builder /app/migrate.linux-amd64 ./migrate
 COPY app.env .
 COPY start.sh .
 COPY wait-for.sh .
-COPY db/migration ./migration
+COPY db/migrate ./migration
 
 EXPOSE 8080
 CMD [ "/app/main" ]
