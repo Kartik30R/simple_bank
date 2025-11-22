@@ -1,4 +1,4 @@
-.PHONY: sqlc createdb dropdb postgres  migrateup migratedown migrateup1 migratedown1 migratedrop server
+.PHONY: sqlc createdb dropdb postgres  migrateup migratedown migrateup1 migratedown1 migratedrop server proto
 
 sqlc:
 	@sqlc generate
@@ -38,3 +38,10 @@ migratedrop:
 
 server:
 	@go run main.go
+
+proto:
+	@rm -f pb/*.go
+	protoc --proto_path=proto \
+	 --go_out=pb --go_opt=paths=source_relative \
+	 --go-grpc_out=pb --go-grpc_opt=paths=source_relative \
+	 proto/*.proto
