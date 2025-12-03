@@ -1,6 +1,7 @@
-// user.proto
 syntax = "proto3";
+
 package pb;
+
 import "google/protobuf/timestamp.proto";
 
 option go_package = "github.com/Kartik30R/simple_bank/pb";

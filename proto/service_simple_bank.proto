@@ -1,5 +1,5 @@
-// service_simple_bank.proto
 syntax = "proto3";
+
 package pb;
 
 import "create_user.proto";
@@ -8,6 +8,7 @@ import "login_user.proto";
 option go_package = "github.com/Kartik30R/simple_bank/pb";
 
 service SimpleBank {
-    rpc CreateUser (pb.create_user.CreateUserRequest) returns (pb.create_user.CreateUserResponse) {}
-    rpc LoginUser (pb.login_user.LoginUserRequest) returns (pb.login_user.LoginUserResponse) {}
+    // Note: No longer "pb.create_user.CreateUserRequest", just "CreateUserRequest"
+    rpc CreateUser (CreateUserRequest) returns (CreateUserResponse) {}
+    rpc LoginUser (LoginUserRequest) returns (LoginUserResponse) {}
 }

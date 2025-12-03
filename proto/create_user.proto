@@ -1,9 +1,10 @@
-// create_user.proto
 syntax = "proto3";
-package pb.create_user;
+
+package pb;
+
 import "user.proto";
 
-option go_package = "github.com/Kartik30R/simple_bank/pb/create_user";
+option go_package = "github.com/Kartik30R/simple_bank/pb";
 
 message CreateUserRequest {
     string username = 1;
@@ -13,5 +14,5 @@ message CreateUserRequest {
 }
 
 message CreateUserResponse {
-    pb.User user = 1;
+    User user = 1;
 }

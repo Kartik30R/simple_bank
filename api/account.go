@@ -6,8 +6,8 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	db "github.com/kartik30R/simple_bank/db/sqlc"
-	"github.com/kartik30R/simple_bank/token"
+	db "github.com/Kartik30R/simple_bank/db/sqlc"
+	"github.com/Kartik30R/simple_bank/token"
 	"github.com/lib/pq"
 )
 

@@ -4,9 +4,9 @@ import (
 	"database/sql"
 	"log"
 
-	"github.com/kartik30R/simple_bank/api"
-	db "github.com/kartik30R/simple_bank/db/sqlc"
-	"github.com/kartik30R/simple_bank/utils"
+	"github.com/Kartik30R/simple_bank/api"
+	db "github.com/Kartik30R/simple_bank/db/sqlc"
+	"github.com/Kartik30R/simple_bank/utils"
 	_ "github.com/lib/pq"
 )
 

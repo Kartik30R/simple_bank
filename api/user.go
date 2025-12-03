@@ -7,8 +7,8 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
-	db "github.com/kartik30R/simple_bank/db/sqlc"
-	"github.com/kartik30R/simple_bank/utils"
+	db "github.com/Kartik30R/simple_bank/db/sqlc"
+	"github.com/Kartik30R/simple_bank/utils"
 	"github.com/lib/pq"
 )
 
